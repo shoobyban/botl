@@ -22,7 +22,7 @@ func ExampleTransform() {
 	var inbotl map[string]interface{}
 	json.Unmarshal(rawjson, &injson)
 	json.Unmarshal(rawbotl, &inbotl)
-	v, err := botl.Transform(injson, inbotl)
+	v, err := Transform(injson, inbotl)
 	if err != nil {
 		fmt.Errorf("Got error from Transform: %v", err)
 	}
