@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-
-	"github.com/shoobyban/botl"
 )
 
 func ExampleTransform() {
