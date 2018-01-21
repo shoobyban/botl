@@ -1,0 +1,19 @@
+{
+  "characters": [
+    {
+      "_type": "#",
+      "path": "$.items[*]",
+      "transform": {
+        "fullname": "#@.name",
+        "saying": {
+          "_type": "#",
+          "path": "@..quote",
+          "nulls": false
+        }
+      }
+    }
+  ],
+  "urls": [
+    "#$..website"
+  ]
+}

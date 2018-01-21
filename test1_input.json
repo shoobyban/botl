@@ -1,0 +1,32 @@
+{
+  "cursor": "8b08006b-963a-6909-c132-cc618cd4b352",
+  "more": true,
+  "items": [
+    {
+      "name": "Ambassador Kosh",
+      "type": "Vorlonn",
+      "resources": {
+        "website": "http://babylon5.wikia.com/wiki/Kosh",
+        "quote": "Yes"
+      }
+    },
+    {
+      "name": "Worf",
+      "type": "Klingon",
+      "resources": {
+        "website": "https://en.wikipedia.org/wiki/Worf",
+        "images": [
+          "https://en.wikipedia.org/wiki/File:WorfTNG.jpg",
+          "http://example.com/worf.jpg"
+        ]
+      }
+    },
+    {
+      "name": "Stanley Tweedle",
+      "type": "Human",
+      "resources": {
+        "website": "http://lexx.wikia.com/wiki/Stanley_Tweedle"
+      }
+    }
+  ]
+}
