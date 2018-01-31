@@ -224,10 +224,17 @@ func evalObject(aScope interface{}, abOTLObject map[string]interface{}) (interfa
 	ltransformedObject := map[string]interface{}{}
 	for lkey := range abOTLObject {
 		ltransformedValue, keepnils, _ := transform(aScope, abOTLObject[lkey])
-		if ltransformedValue != nil && len(ltransformedValue.([]interface{})) > 0 {
-			val := ltransformedValue.([]interface{})[0]
-			if val != nil || keepnils {
-				ltransformedObject[lkey] = val
+		if ltransformedValue != nil {
+			if isArray(ltransformedValue) && len(ltransformedValue.([]interface{})) > 0 {
+				val := ltransformedValue.([]interface{})[0]
+				if val != nil || keepnils {
+					ltransformedObject[lkey] = val
+				}
+			} else if isObject(ltransformedValue) {
+				val := ltransformedValue.(map[string]interface{})
+				if val != nil || keepnils {
+					ltransformedObject[lkey] = val
+				}
 			}
 		}
 	}
