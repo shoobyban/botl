@@ -120,11 +120,7 @@ func evalFullSection(aScope interface{}, abOTLSection map[string]interface{}) (i
 		fmt.Println("can't parse", lp)
 		panic("too bad")
 	}
-	lselections, err := jpq.Apply(lscope)
-
-	if err != nil {
-		fmt.Println(err, "\n", lscope, "\n", lp)
-	}
+	lselections, _ := jpq.Apply(lscope)
 
 	var lresults []interface{}
 
