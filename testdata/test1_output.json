@@ -1,0 +1,19 @@
+{
+  "characters": [
+    {
+      "fullname": "Ambassador Kosh",
+      "saying": "Yes"
+    },
+    {
+      "fullname": "Worf"
+    },
+    {
+      "fullname": "Stanley Tweedle"
+    }
+  ],
+  "urls": [
+    "http://babylon5.wikia.com/wiki/Kosh",
+    "https://en.wikipedia.org/wiki/Worf",
+    "http://lexx.wikia.com/wiki/Stanley_Tweedle"
+  ]
+}
