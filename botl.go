@@ -92,10 +92,10 @@ func evalFullSection(aScope interface{}, abOTLSection map[string]interface{}) (i
 	if !ok {
 		lpath = "@"
 	}
-	lscopeid, ok := abOTLSection["scope"]
-	ltransform, ok := abOTLSection["transform"]
-	lniltransform, ok := abOTLSection["niltransform"]
-	lkeepnils, ok := abOTLSection["nils"]
+	lscopeid, _ := abOTLSection["scope"]
+	ltransform, _ := abOTLSection["transform"]
+	lniltransform, _ := abOTLSection["niltransform"]
+	lkeepnils, _ := abOTLSection["nils"]
 	if lkeepnils == nil {
 		lkeepnils = true
 	}

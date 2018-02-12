@@ -41,7 +41,7 @@ func TestBotlTransform(t *testing.T) {
 
 	v, err := Transform(injson, inbotl)
 	if err != nil {
-		fmt.Errorf("Got error from Transform: %v", err)
+		t.Fatalf("Got error from Transform: %s", err.Error())
 	}
 
 	fixedDeepEqual(t, v, outjson)
@@ -105,7 +105,7 @@ func fixedDeepEqual(t *testing.T, a interface{}, b interface{}) {
 			return
 		}
 		if len(ma) != len(mb) {
-			t.Fatal("not equal lenght slices")
+			t.Fatal("not equal length slices")
 		}
 		for i := range ma {
 			fixedDeepEqual(t, ma[i], mb[i])
