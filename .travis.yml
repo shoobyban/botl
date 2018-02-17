@@ -1,7 +1,6 @@
 language: go
 go:
   - 1.9.2
-  - master
 # not yet supported by Travis  - 1.10
 
 before_install:
