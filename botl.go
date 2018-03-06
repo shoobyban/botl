@@ -10,6 +10,7 @@ import (
 	"strconv"
 
 	"github.com/gdey/jsonpath"
+	"github.com/robertkrimen/otto"
 )
 
 // Transform Maps, Arrays, Simple Values (MAS)
@@ -70,6 +71,11 @@ func getSectionFunction(abOTLTransform interface{}) func(interface{}) (interface
 				})
 			}
 		}
+		if t[:2] == "%%" {
+			return func(aScope interface{}) (interface{}, bool, error) {
+				return evalJSString(aScope, t[2:])
+			}
+		}
 		return func(aScope interface{}) (interface{}, bool, error) {
 			return evalLiteral(abOTLTransform)
 		}
@@ -109,7 +115,7 @@ func evalFullSection(aScope interface{}, abOTLSection map[string]interface{}) (i
 	}
 	lp := lpath.(string)
 	if lp[:1] == "$" {
-		lscope = aScope.(map[string]interface{})["$"]
+		lscope = aScope.(map[string]interface{})["$"].(map[string]interface{})
 	} else if lp[:1] == "@" {
 		lscope = aScope.(map[string]interface{})
 	} else {
