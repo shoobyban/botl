@@ -5,6 +5,7 @@
 package botl
 
 import (
+	"encoding/json"
 	"fmt"
 	"reflect"
 	"strconv"
@@ -85,6 +86,17 @@ func getSectionFunction(abOTLTransform interface{}) func(interface{}) (interface
 		return evalLiteral(abOTLTransform)
 	}
 
+}
+
+func evalJSString(aScope, twikstring interface{}) (interface{}, bool, error) {
+	vm := otto.New()
+	scope, err := json.Marshal(aScope.(map[string]interface{})["@"])
+	script := "botl=" + string(scope) + ";" + twikstring.(string)
+	value, err := vm.Run(script)
+	if err == nil {
+		return []interface{}{value.String()}, true, nil
+	}
+	return nil, false, err
 }
 
 // eval functions must return
