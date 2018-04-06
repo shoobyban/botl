@@ -8,7 +8,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/clbanning/mxj"
+	"github.com/shoobyban/mxj"
 )
 
 type Map map[string]interface{}
